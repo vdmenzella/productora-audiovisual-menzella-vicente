@@ -1,0 +1,784 @@
+/* ------------------- COMIENZO ESTRUCTURA BASICA HTML -----------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ------------------- VARIABLE - invisible en css-----------------------*/
+html {
+  background-color: #111;
+  text-align: center;
+}
+
+/* ------------------- FIN ESTRUCTURA BASICA HTML -----------------------*/
+/* ------------------- COMIENZO BARRA DE NAVEGACION -----------------------*/
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: white;
+}
+
+nav .menu-btn i {
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+/* ------------------- FIN BARRA DE NAVEGACION -----------------------*/
+/* ---------------------- COMIENZO PARRAFOS Y TEXTOS -------------------------*/
+/*Parrafo Info*/
+p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  text-shadow: 0 0 10px black;
+}
+
+/*Tipografias Titulos*/
+h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 300%;
+  transition: 0.5s;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+h1:hover {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  transform: scale(1.01);
+  transition: all 0.8s;
+}
+
+h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 200%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+h3 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 150%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+h4 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 150%;
+}
+
+h5 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 100%;
+}
+
+/* ---------------------- FIN PARRAFOS Y TEXTOS -------------------------*/
+/* ------------------- COMIENZO SECCION PAGINA PRINCIPAL -----------------------*/
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+  text-align: center div;
+  text-align-font-size: 40px;
+  text-align-font-weight: 700;
+  
+  /* video de fondo pagina principal */
+}
+.content h1 {
+  font-size: 160px;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.content h1:hover {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+.content a {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 24px;
+  border: 5px solid white;
+  padding: 14 px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
+.content a:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
+
+.videoFondo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin-top: 400;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .videoFondo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .videoFondo {
+    width: auto;
+    height: 100%;
+  }
+}
+/* ------------------- FIN SECCION PAGINA PRINCIPAL -----------------------*/
+/* ---------------------- COMIENZO SECCION INFO -------------------------*/
+/*Globos servicios - Info*/
+.cuadrillaOpciones {
+  margin-top: 50px;
+  display: inline-flex;
+  justify-content: space-around;
+  padding-bottom: 50px;
+}
+.cuadrillaOpciones .servicio1 {
+  padding-bottom: 30%;
+  padding-right: 10%;
+}
+.cuadrillaOpciones .servicio1:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
+}
+.cuadrillaOpciones .servicio2 {
+  padding-bottom: 30%;
+  padding-right: 10%;
+}
+.cuadrillaOpciones .servicio2:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
+}
+.cuadrillaOpciones .servicio3 {
+  padding-bottom: 16%;
+  padding-left: 20%;
+}
+.cuadrillaOpciones .servicio3:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
+}
+.cuadrillaOpciones .servicio4 {
+  padding-bottom: 30%;
+  padding-left: 20%;
+}
+.cuadrillaOpciones .servicio4:hover {
+  transform: scale(1.1);
+  transition: all 0.8s;
+}
+
+/*Imagen Seccion Info*/
+.imagenInfo {
+  width: 80%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.imagenInfo:hover {
+  transform: scale(1.01);
+  transition: all 0.8s;
+}
+
+/* ---------------------- FIN SECCION INFO -------------------------*/
+/* ---------------------- COMIENZO SECCION CLIPS -------------------------*/
+/*---- opciones de los clips -------------*/
+.clipsCentrados {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* ---------------------- FIN SECCION CLIPS -------------------------*/
+/* ---------------------- COMIENZO SECCION CORTOS -------------------------*/
+.galeriaPosters {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.poster {
+  border: 2px solid #000;
+  border-radius: 10px;
+  transition: all 0.08s;
+  filter: grayscale(100%);
+}
+
+.poster:hover {
+  transform: scale(1.05);
+  transition: all 0.8s;
+  box-shadow: 0 0 5px #333;
+  filter: grayscale(0%);
+}
+
+.poster1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background-image: url(Multimedia/poster\ final.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.poster2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-image: url(multimedia/52d24c99322159.5ef08afdcf399.jpg);
+  background-size: cover;
+  background-position: top;
+}
+
+.poster3 {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  background-image: url(Multimedia/0a1a3599322159.5ef08afdced23.jpg);
+  background-size: 100%;
+  background-position: center;
+}
+
+.poster4 {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background-image: url(Multimedia/poster\ final\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.poster5 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-image: url(Multimedia/posternonholeta.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.poster6 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-image: url(Multimedia/sashasissi.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.poster7 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-image: url(Multimedia/sin\ disfraz.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.poster8 {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  background-image: url(Multimedia/Poster-Soria.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+@media only screen and (min-width: 600px) {
+  .galeriaPosters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .galeriaPosters {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* ---------------------- FINO SECCION CORTOS -------------------------*/
+/* ---------------------- COMIENZO SECCION FOTOS -------------------------*/
+/* --- Sesion 1 -----*/
+.galeria {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.item {
+  border: 2px solid #000;
+  border-radius: 10px;
+  transition: all 0.08s;
+  filter: grayscale(100%);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: all 0.8s;
+  box-shadow: 0 0 5px #333;
+  filter: grayscale(0%);
+}
+
+.item1 {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background-image: url(Multimedia/artist.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-image: url(multimedia/audience.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item3 {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  background-image: url(multimedia/audience\ 2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item4 {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background-image: url(Multimedia/crazy.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item5 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-image: url(Multimedia/pianist.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item6 {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-image: url(Multimedia/agachado.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item7 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-image: url(Multimedia/cam.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item8 {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  background-image: url(Multimedia/screamer.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* --- Sesion 2 -----*/
+.galeria2 {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.item {
+  border: 2px solid #000;
+  border-radius: 10px;
+  transition: all 0.08s;
+  filter: grayscale(100%);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: all 0.8s;
+  box-shadow: 0 0 5px #333;
+  filter: grayscale(0%);
+}
+
+.item1a {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background-image: url(Multimedia/juje1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item2a {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-image: url(multimedia/juje2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item3a {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  background-image: url(multimedia/juje3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item4a {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background-image: url(Multimedia/juje4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item5a {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-image: url(Multimedia/juje5.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item6a {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-image: url(Multimedia/juje6.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item7a {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-image: url(Multimedia/juje7.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item8a {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  background-image: url(Multimedia/juje8.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* --- Sesion 3 -----*/
+.galeria3 {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  padding: 20px;
+  grid-gap: 10px;
+}
+
+.item {
+  border: 2px solid #000;
+  border-radius: 10px;
+  transition: all 0.08s;
+  filter: grayscale(100%);
+}
+
+.item:hover {
+  transform: scale(1.05);
+  transition: all 0.8s;
+  box-shadow: 0 0 5px #333;
+  filter: grayscale(0%);
+}
+
+.item1b {
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background-image: url(Multimedia/sargepete1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item2b {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-image: url(multimedia/sargepete2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item3b {
+  grid-column: 3/5;
+  grid-row: 1/2;
+  background-image: url(multimedia/sargepete3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item4b {
+  grid-column: 2/3;
+  grid-row: 2/4;
+  background-image: url(Multimedia/sargepete4.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item5b {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  background-image: url(Multimedia/sargepete5.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item6b {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  background-image: url(Multimedia/sargepete6.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item7b {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-image: url(Multimedia/sargepete7.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.item8b {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  background-image: url(Multimedia/sargepete8.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .galeria {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+/* ---------------------- FIN SECCION FOTOS -------------------------*/
+/* ---------------------- COMIENZO SECCION CONTACTO -------------------------*/
+textarea {
+  color: black;
+}
+
+textarea:hover {
+  color: white;
+  background: rgb(0, 0, 0);
+}
+
+.lineasDeContacto {
+  display: grid;
+  margin-top: 1%;
+  margin-bottom: 20px;
+}
+
+.iconosRedes li {
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 50px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: white;
+}
+
+.iconosRedes li:hover {
+  color: white;
+}
+
+label {
+  display: grid;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 100%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+input {
+  text-align: right;
+  font-size: 100%;
+  font-family: "Poppins", sans-serif;
+  max-width: 100%;
+  max-height: 100%;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+input:hover {
+  color: white;
+  background: rgb(0, 0, 0);
+}
+
+.subir {
+  height: 40px;
+  width: 40px;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 40px;
+  border: 1px solid cyan;
+  border-radius: 50%;
+  box-shadow: 0 0 5px cyan;
+}
+
+.subir:hover {
+  color: rgb(0, 0, 0);
+  background: rgb(90, 89, 89);
+}
+
+/* ---------------------- FIN SECCION CONTACTO -------------------------*/
+
+/*# sourceMappingURL=style.css.map */
